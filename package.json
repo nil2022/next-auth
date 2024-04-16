@@ -10,6 +10,7 @@
         "prettier": "prettier --write ."
     },
     "dependencies": {
+        "@vercel/analytics": "^1.2.2",
         "axios": "^1.6.8",
         "bcrypt": "^5.1.1",
         "jsonwebtoken": "^9.0.2",
