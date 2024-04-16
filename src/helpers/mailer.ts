@@ -1,6 +1,7 @@
 import User from "@/models/users.model";
 import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 export const sendEmail = async ({ email, emailType, userId }: any) => {
     try {
@@ -31,7 +32,7 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
             },
-        });
+        } as SMTPTransport.Options);
 
         const mailOptions = {
             from: process.env.MAIL_FROM,
