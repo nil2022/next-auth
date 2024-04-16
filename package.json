@@ -5,12 +5,13 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
+        "start": "next build && next start",
         "lint": "next lint",
         "prettier": "prettier --write ."
     },
     "dependencies": {
         "bcrypt": "^5.1.1",
+        "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.3.1",
         "next": "14.2.1",
         "nodemailer": "^6.9.13",
@@ -19,6 +20,7 @@
     },
     "devDependencies": {
         "@types/bcrypt": "^5.0.2",
+        "@types/jsonwebtoken": "^9.0.6",
         "@types/node": "^20",
         "@types/nodemailer": "^6.4.14",
         "@types/react": "^18",
