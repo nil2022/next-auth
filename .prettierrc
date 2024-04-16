@@ -3,5 +3,8 @@
     "tabWidth": 4,
     "semi": true,
     "singleQuote": false,
-    "es5": true
+    "es5": true,
+    "bracketSpacing": true,
+    "endOfLine": "crlf",
+    "printWidth": 80
 }

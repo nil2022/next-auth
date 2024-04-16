@@ -13,13 +13,16 @@ export async function POST(request: NextRequest) {
         const { token } = reqBody;
         console.log(token);
 
-        const user = await User.findOne({ verifyToken: token,
-            verifyTokenExpiry: { $gt: Date.now() }
-        })
+        const user = await User.findOne({
+            verifyToken: token,
+            verifyTokenExpiry: { $gt: Date.now() },
+        });
 
         if (!user) {
-            return NextResponse.json({error: "Invalid token"}, 
-                {status: 400})
+            return NextResponse.json(
+                { error: "Invalid token" },
+                { status: 400 },
+            );
         }
         console.log(user);
 
@@ -29,15 +32,19 @@ export async function POST(request: NextRequest) {
 
         await user.save({ validateBeforeSave: false });
 
-        return NextResponse.json({
-            message: "Email verified successfully",
-            success: true
-        }, { status: 200})
-
-
+        return NextResponse.json(
+            {
+                message: "Email verified successfully",
+                success: true,
+            },
+            { status: 200 },
+        );
     } catch (error: any) {
-        return NextResponse.json({ 
-            error: error.message 
-        }, { status: 500 });
+        return NextResponse.json(
+            {
+                error: error.message,
+            },
+            { status: 500 },
+        );
     }
 }
