@@ -3,13 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --port 3001",
         "build": "next build",
         "start": "next build && next start",
         "lint": "next lint",
         "prettier": "prettier --write ."
     },
     "dependencies": {
+        "@types/uuid": "^9.0.8",
         "@vercel/analytics": "^1.2.2",
         "@vercel/speed-insights": "^1.0.10",
         "axios": "^1.6.8",
@@ -20,7 +21,8 @@
         "nodemailer": "^6.9.13",
         "react": "^18",
         "react-dom": "^18",
-        "react-hot-toast": "^2.4.1"
+        "react-hot-toast": "^2.4.1",
+        "uuid": "^9.0.1"
     },
     "devDependencies": {
         "@types/bcrypt": "^5.0.2",
