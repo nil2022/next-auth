@@ -5,9 +5,10 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
     const path = request.nextUrl.pathname;
 
-    const isPublicPath = path === '/login' || path === '/signup' || path === '/verifyuser';
+    const isPublicPath =
+        path === "/login" || path === "/signup" || path === "/verifyuser";
 
-    const token =request.cookies.get("token")?.value;
+    const token = request.cookies.get("token")?.value;
 
     if (isPublicPath && token) {
         return NextResponse.redirect(new URL("/", request.url));
@@ -20,11 +21,5 @@ export function middleware(request: NextRequest) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: [
-        '/',
-        '/login',
-        '/signup',
-        '/profile',
-        '/verifyuser',
-    ],
+    matcher: ["/", "/login", "/signup", "/profile", "/verifyuser"],
 };
