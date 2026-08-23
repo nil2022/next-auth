@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>
+            Click
+            <a href="${process.env.DOMAIN}/verifyuser?token=${userToken}"
+                >here</a
+            >
+            to ${emailType === "VERIFY" ? "verify your email" : "reset your
+            password"} or copy and paste the link below in your browser. <br />
+            ${process.env.DOMAIN}/verifyuser?token=${userToken}
+        </p>
+    </body>
+</html>
